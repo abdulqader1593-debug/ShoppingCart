@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".AddItemActivity">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:contentDescription="backarrow"
+        android:src="@drawable/ic_back_arrow"
+        android:id="@+id/iv_back_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/iv_back_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/add_item"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginStart="20dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/tv_page_description"
+        app:layout_constraintTop_toBottomOf="@id/iv_back_icon"
+        android:textColor="@color/black"
+        android:text="Name and quantity are required. Category helps you group the list while shopping."
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textinput_item_name"
+        android:padding="10dp"
+        app:errorEnabled="true"
+        app:layout_constraintTop_toBottomOf="@id/tv_page_description">
+
+<com.google.android.material.textfield.TextInputEditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Item name"
+    android:textColor="@color/black"
+
+    app:helperText="What are you buying?"
+    />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:id="@+id/ll_quantity_unit_container"
+    app:layout_constraintTop_toBottomOf="@id/textinput_item_name"
+    >
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textinput_quantity"
+        android:layout_weight="1"
+        app:errorEnabled="true"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_page_description">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quantity"
+        android:inputType="number"
+        android:textColor="@color/black"
+        />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textinput_unit"
+        android:layout_marginStart="5dp"
+        android:layout_weight="1"
+        app:errorEnabled="true"
+        app:layout_constraintTop_toBottomOf="@id/tv_page_description">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Unit"
+
+        android:textColor="@color/black"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:singleSelection="true"
+        app:selectionRequired="true"
+        android:id="@+id/cg_category"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/ll_quantity_unit_container"
+        android:padding="10dp">
+
+    <com.google.android.material.chip.Chip
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vegetables"
+        app:checkedIconTint="@color/black"
+        style="@style/Widget.Material3.Chip.Filter"
+        app:chipBackgroundColor="#F0EFFF"
+        android:textColor="@color/black"
+        />
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dairy"
+            app:checkedIconTint="@color/black"
+            android:textColor="@color/black"
+            style="@style/Widget.Material3.Chip.Filter"
+            app:chipBackgroundColor="#F0EFFF"
+            />
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pantry"
+            app:checkedIconTint="@color/black"
+            android:textColor="@color/black"
+            style="@style/Widget.Material3.Chip.Filter"
+            app:chipBackgroundColor="#F0EFFF"
+            />
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Household"
+            app:checkedIconTint="@color/black"
+            android:textColor="@color/black"
+            style="@style/Widget.Material3.Chip.Filter"
+            app:chipBackgroundColor="#F0EFFF"
+            />
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Snacks"
+            app:checkedIconTint="@color/black"
+            android:textColor="@color/black"
+            style="@style/Widget.Material3.Chip.Filter"
+            app:chipBackgroundColor="#F0EFFF"
+            />
+    </com.google.android.material.chip.ChipGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:id="@+id/btn_cancel"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn_add_to_list"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+ Add to list"
+        android:id="@+id/btn_add_to_list"
+        android:layout_marginLeft="5dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
